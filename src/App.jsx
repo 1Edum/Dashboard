@@ -3,10 +3,14 @@ import './styles/global.scss'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 
 import Navbar from './componentes/navbar/Navbar'
-import Users from './pages/Users/Users'
-import Home from './pages/home/Home'
 import Menu from './componentes/menu/Menu'
 import Footer from './componentes/footer/Footer'
+
+import Home from './pages/home/Home'
+
+import RendaFixa from './pages/rendafixa/RendaFixa'
+import FundosImobiliarios from './pages/fundosimobiliarios/FundosImobiliarios'
+import Acoes from './pages/acoes/Acoes'
 
 function App() {
 
@@ -34,12 +38,20 @@ function App() {
       children:[
         {
           path:"/",
-          element: <Home />
+          element: <Home />,
         },
         {
-          path:"/users",
-          element: <Users />
+          path:"/rendafixa",
+          element: <RendaFixa />,
         },
+        {
+          path:"/acoes",
+          element: <Acoes />,
+        },
+        {
+          path:"/fundos",
+          element: <FundosImobiliarios />
+        }
       ]
       
     }

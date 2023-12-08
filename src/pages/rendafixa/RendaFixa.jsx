@@ -3,7 +3,7 @@ import './users.scss'
 const Users = () => {
   return (
     <div className="users">
-      Users
+      Renda Fixa
     </div>
   )
 }
