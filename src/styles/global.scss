@@ -13,23 +13,23 @@ a {
 
 .main {
     font-family: "Inter", sans-serif;
-    background-color: $cor-cinza;
-    color: $bg-cinza;
 }
 
 .container {
     display: flex;
+    
 }
 
 .menuContainer {
     width: 15vw;
-    height: 85vh;
+    height: 92vh;
 
-    padding: 2% 2%;
+    background-color: $bg-light-gray;
 
     box-shadow: rgba(0, 0, 0, 0.15) 0px 1.95px 2.6px;
 }
 
 .contentContainer{
     width: 85vw;
+    background-color: $bg-dark-gray;
 }
