@@ -1,31 +1,34 @@
-import './menu.scss'
-import { Link } from 'react-router-dom'
+import './menu.scss';
+import { BellDot } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+
+const links = [
+  { to: "/", label: "Início" },
+  { to: "/rendafixa", label: "Renda Fixa" },
+  { to: "/acoes", label: "Ações" },
+  { to: "/fundos", label: "Fundos Imobiliarios" }
+];
 
 const Menu = () => {
+  const location = useLocation();
+  
   return (
     <div className="menu">
       <div>
-        <Link to="/">
-          Início
-        </Link>
+        {links.map(link => (
+          <div key={link.to} className={`links ${location.pathname === link.to ? 'active' : ''}`}>
+            <Link to={link.to} className="menu-link">
+              {link.label}
+            </Link>
+            <span></span>
+          </div>
+        ))}
       </div>
-      <div> 
-        <Link to="/rendafixa">
-          Renda Fixa
-        </Link>
-      </div>
-      <div>
-        <Link to="/acoes">
-          Ações
-        </Link>
-      </div>
-      <div> 
-        <Link to="/fundos">
-          Fundos Imobiliarios
-        </Link>
-      </div>
+      <span>
+        <BellDot size={26} />
+      </span>
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
