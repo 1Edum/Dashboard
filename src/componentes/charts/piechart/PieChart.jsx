@@ -1,26 +1,41 @@
 import PropTypes from 'prop-types';
 import { Pie } from "react-chartjs-2";
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 function PieChart({ chartData }) {
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Pie Chart</h2>
-      <Pie
-        data={chartData}
-        options={{
-          plugins: {
-            title: {
-              display: true,
-              text: "Users Gained between 2016-2020"
-            }
-          }
-        }}
-      />
+      <Pie 
+            data={chartData} 
+            options={{
+              plugins: {
+                legend: {
+                  display: true,
+                  position: 'right', // Posição da legenda (top, left, bottom, right)
+                },
+                datalabels: {
+                  color: '#000', // Cor do texto
+                  textAlign: 'center',
+                  font: {
+                    weight: 'bold',
+                    size: 20,
+                  },
+                  formatter: (value, context) => {
+                    return context.chart.data.labels[context.dataIndex];
+                  },
+                },
+              },
+            }} 
+          />
     </div>
   );
 }
 
 PieChart.propTypes = {
-    chartData: PropTypes.node,
-  };
+  chartData: PropTypes.object.isRequired,
+};
+
 export default PieChart;
