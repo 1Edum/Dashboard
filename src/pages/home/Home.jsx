@@ -35,10 +35,16 @@ const Home = () => {
 
   return (
     <div className="home">
-      <section>
-        <Card title={"Valor Aplicado"} />
-        <Card title={"Saldo Bruto"} />
-        <Card title={"Variação"} />
+      <section className="cards">
+        <Card title={"Valor Aplicado"}>
+          <h3 className="valor">R$ 900,00</h3>
+        </Card>
+        <Card title={"Saldo Bruto"}>
+          <h3 className="valor">R$ 1.000,00</h3>
+        </Card>
+        <Card title={"Variação"}>
+          <h3 className="variacao">1.11%</h3>
+        </Card>
       </section>
       <section className="chards">
         <div className="Dividendo">
@@ -48,8 +54,23 @@ const Home = () => {
           <h1>Carteira</h1>
           <Pie data={chartData} />
         </div>
-        <div className="Meta"></div>
-        <div className="Tipo"></div>
+        <div className="Meta">
+          <h3>Meta R$ 10,00 de Recibos Mensais</h3>
+          <div className="line">
+            <p>80%</p>
+            <div className="line-complete">
+            </div>
+          </div>
+        </div>
+        <div className="Tipo">
+          <h3>% em Renda Variavel</h3>
+          <div className="line">
+            <p>95%</p>
+            <div className="line-complete">
+            </div>
+          </div>
+          
+        </div>
       </section>
     </div>
   );

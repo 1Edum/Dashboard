@@ -14,6 +14,14 @@
         gap: 20px 30px;
         height: 10%;
     }
+    .cards{
+        .valor{
+            color: $text-color-gray;
+        }
+        .variacao{
+            color: rgb(57, 177, 57);
+        }
+    }
     .chards{
         height: 90%;
         padding: 20px 0px;
@@ -30,14 +38,78 @@
         
         .Meta{
             grid-area: Meta;
-            background-color: beige;
+            padding: 50px;
+            gap: 30px;
+            background-color: $bg-light-gray;
+            width: 100%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: $text-color-white;
+            text-align: center;
 
+            .line{
+                background-color: $bg-dark-gray;
+                width: 100%;
+                height: 20px;
+                border-radius: 10px;
+                position: relative;
+                
+                p{
+                    position: absolute;
+                    z-index: 2;
+                    left: 50%;
+                    top: 1px;
+                }
+                .line-complete{
+                    width: 80%;
+                    height: 20px;
+                    border-radius: 10px;
+                    position: absolute;
+                    background-color:$color-yellow;
+                    
+                }
+            }
         }
 
         .Tipo{
             grid-area: Tipo;
-            background-color: beige;
-
+            padding: 50px;
+            gap: 30px;
+            background-color: $bg-light-gray;
+            width: 100%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: $text-color-white;
+            text-align: center;
+            
+            .line{
+                background-color: $bg-dark-gray;
+                width: 100%;
+                height: 20px;
+                border-radius: 10px;
+                position: relative;
+                
+                p{
+                    position: absolute;
+                    z-index: 2;
+                    left: 50%;
+                    top: 1px;
+                }
+                .line-complete{
+                    width: 95%;
+                    height: 20px;
+                    border-radius: 10px;
+                    position: absolute;
+                    background-color:$color-yellow;
+                    
+                }
+            }
         }
     
         .Dividendo{
