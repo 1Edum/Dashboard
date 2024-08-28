@@ -1,37 +1,35 @@
-import  { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "../../componentes/card/Card";
+import BarChart from "../../componentes/charts/barchart/BarChart";
+import PieChart from "../../componentes/charts/piechart/PieChart";
 import "./home.scss";
-import { Pie } from 'react-chartjs-2';
-import { Chart, ArcElement,Tooltip, Legend, } from 'chart.js';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-Chart.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
-const initialData = {
+const initialDataPie = {
   labels: ['FIIs', 'Ações', 'Renda Fixa'],
   datasets: [
     {
       data: [60, 35, 5],
-      backgroundColor: [
-        '#FD413C',
-        '#FEBC2C',
-      '#ca3530',
-      ],
+      backgroundColor: ['#FD413C', '#FEBC2C', '#ca3530'],
       borderWidth: 2,
     },
-  ]
-}
+  ],
+};
+
+const initialDataBar = {
+  labels: ['FIIs', 'Ações', 'Renda Fixa'],
+  datasets: [
+    {
+      label: 'Investimentos',
+      data: [60, 35, 5],
+      backgroundColor: ['#FD413C', '#FEBC2C', '#ca3530'],
+      borderWidth: 2,
+    },
+  ],
+};
 
 const Home = () => {
-  const [chartData] = useState(initialData);
-
-  useEffect(() => {
-    // Função de limpeza para destruir o gráfico antes de recriar
-    return () => {
-      if (Chart.instances.length > 0) {
-        Chart.instances.forEach(chart => chart.destroy());
-      }
-    };
-  }, [chartData]);
+  const [chartDataPie] = useState(initialDataPie);
+  const [chartDataBar] = useState(initialDataBar);
 
   return (
     <div className="home">
@@ -48,28 +46,25 @@ const Home = () => {
       </section>
       <section className="chards">
         <div className="Dividendo">
-          
+          <BarChart chartData={chartDataBar} />
         </div>
         <div className="Carteira">
           <h1>Carteira</h1>
-          <Pie data={chartData} />
+            <PieChart chartData={chartDataPie} />
         </div>
         <div className="Meta">
           <h3>Meta R$ 10,00 de Recibos Mensais</h3>
           <div className="line">
             <p>80%</p>
-            <div className="line-complete">
-            </div>
+            <div className="line-complete"></div>
           </div>
         </div>
         <div className="Tipo">
-          <h3>% em Renda Variavel</h3>
+          <h3>% em Renda Variável</h3>
           <div className="line">
             <p>95%</p>
-            <div className="line-complete">
-            </div>
+            <div className="line-complete"></div>
           </div>
-          
         </div>
       </section>
     </div>
