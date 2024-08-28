@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Pie } from "react-chartjs-2";
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
-ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 function PieChart({ chartData }) {
   return (
