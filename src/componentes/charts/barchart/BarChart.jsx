@@ -33,20 +33,6 @@ function BarChart({ chartData = {} }) { // Valor padrão para chartData
               },
             },
           },
-          scales: {
-            y: {
-              beginAtZero: true,
-              ticks: {
-                stepSize: 20,
-                color: '#000',
-              },
-            },
-            x: {
-              ticks: {
-                color: '#000',
-              },
-            },
-          },
         }} 
       />
     </div>

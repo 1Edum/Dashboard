@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 
 import Navbar from './componentes/navbar/Navbar'
 import Menu from './componentes/menu/Menu'
-import Footer from './componentes/footer/Footer'
 
 import Home from './pages/home/Home'
 
@@ -26,7 +25,6 @@ function App() {
             <Outlet />
           </div>
         </div>
-        <Footer />
       </div>
     )
   }
