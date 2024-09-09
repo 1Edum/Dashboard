@@ -46,6 +46,7 @@ const Home = () => {
       </section>
       <section className="chards">
         <div className="Dividendo">
+          <h1>Rendimentos Recebidos (12 meses) </h1>
           <BarChart chartData={chartDataBar} />
         </div>
         <div className="Carteira">
